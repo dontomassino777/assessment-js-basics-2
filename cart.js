@@ -35,7 +35,9 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, curr) => {
+    return acc + curr
+})
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,7 +56,11 @@ const cart = [
 */
 
 //CODE HERE
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    return ((cartTotal * tax) + cartTotal) - couponValue
+}
 
+// console.log(calcFinalPrice(20, 5, .06))
 
 
 //////////////////PROBLEM 3////////////////////
@@ -78,7 +84,14 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+    The customer object on the cart page should include the following properties/data types:
+    First name: 'string'
+    Last name: 'string'
+    Phone number: number
+    Street Address: 'string'
+    Zip Code: number
+    So that we'd have the correct name of the customer, how to reach them if we have questions about
+    their order/delivery, and the correct street address for delivery.
 
 */
 
@@ -88,3 +101,16 @@ const cart = [
 */
 
 //CODE HERE
+
+class Customer {
+    constructor(firstName, lastName, phone, address, zip){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.address = address;
+        this.zip = zip;
+    }
+}
+
+let newCx = new Customer('Tomas', 'Fisher', 3852082003, '234 S 1680 W', 84601)
+// console.log(newCx)

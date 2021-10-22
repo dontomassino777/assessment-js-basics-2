@@ -31,7 +31,14 @@
 */
 
 //CODE HERE
-
+let pizza = {
+    name: "Veggie Supreme",
+    price: 12,
+    category: "Entree",
+    popularity: 3,
+    rating: 9,
+    tags: ["gluten-free", "vegetarian", "healthy"]
+}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,7 +50,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +60,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -63,7 +70,8 @@
 */
 
 //CODE HERE
-
+let {price: pizzaPrice} = pizza
+console.log(pizzaPrice)
 
 /*
     Fourth, and last, destructure the category
@@ -73,7 +81,8 @@
 */
 
 //CODE HERE
-
+let {category: pizzaCat} = pizza
+console.log(pizzaCat)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,7 +97,48 @@
 */
 
 //CODE HERE
-
+let foodArr = [
+    {
+        name: "Meat Lovers",
+        price: 16,
+        category: "Entree",
+        popularity: 2,
+        rating: 9,
+        tags: ["meat", "protein", "savory"]
+    },
+    {
+        name: "Supreme",
+        price: 15,
+        category: "Entree",
+        popularity: 1,
+        rating: 10,
+        tags: ["meat", "veggies", "healthy"]
+    },
+    {
+        name: "Never-Ending Bread Sticks",
+        price: 7,
+        category: "Appetizer",
+        popularity: 5,
+        rating: 8,
+        tags: ["vegetarian", "tasty", "carbs"]
+    },
+    {
+        name: "Salad Supreme",
+        price: 8,
+        category: "Side",
+        popularity: 4,
+        rating: 7,
+        tags: ["vegetarian", "keto", "healthy"]
+    },
+    {
+        name: "Wings",
+        price: 10,
+        category: "Appetizer",
+        popularity: 3,
+        rating: 9,
+        tags: ["keto", "protein", "meat"]
+    }
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,7 +155,9 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(element => {
+    return (element.tags === "meat")
+})
 
 
 
