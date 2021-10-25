@@ -35,10 +35,15 @@ const cart = [
 
 //CODE HERE
 
-const summedPrice = cart.reduce((acc, curr) => {
-    return acc + curr
-})
+// const summedPrice = cart.reduce((acc, curr) => {
+//     return acc + curr
+// })
 
+const summedPrice = cart.reduce((acc, curr) => {
+    return acc + curr.price
+}, 0)
+
+console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -60,7 +65,7 @@ const calcFinalPrice = (cartTotal, couponValue, tax) => {
     return ((cartTotal * tax) + cartTotal) - couponValue
 }
 
-// console.log(calcFinalPrice(20, 5, .06))
+console.log(calcFinalPrice(20, 5, .06))
 
 
 //////////////////PROBLEM 3////////////////////
@@ -113,4 +118,4 @@ class Customer {
 }
 
 let newCx = new Customer('Tomas', 'Fisher', 3852082003, '234 S 1680 W', 84601)
-// console.log(newCx)
+console.log(newCx)

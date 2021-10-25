@@ -64,9 +64,8 @@ empOne.getSchedule()
 */
 
 //CODE HERE
-let empTwo = {...empOne}
-let Nick = empTwo
 
+let empTwo = {...empOne, name: "Nick"}
 
 //////////////////PROBLEM 2////////////////////
 /*  

@@ -60,7 +60,7 @@ const canWeDeliver = (zipCode) => {
     }
 }
 
-// console.log(canWeDeliver(84601))
+// console.log(canWeDeliver(85204))
 
 /* 
     Problem 2 Continued
@@ -80,17 +80,16 @@ const canWeDeliver = (zipCode) => {
 */
 
 // CODE HERE
-const canWeDeliverTwo = (zipCode) => {
-    deliveryAreaZipCodes.forEach((elem) => {
-        if (elem === zipCode) {
-            return "Your area is eligible for delivery!"
-        } else {
-            return "Your area is not eligible for delivery."
-        }
-    })
-}
-// console.log(canWeDeliver(85205))
 
+const canWeDeliverTwo = (zipCode) => {
+    for(let i = 0; i < deliveryAreaZipCodes.length; i++) {
+        if(deliveryAreaZipCodes[i] === zipCode) {
+            return "Your area is eligible for delivery!"
+        }
+    }
+    return "Your area is not eligible for delivery."
+}
+console.log(canWeDeliverTwo(84601))
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -126,8 +125,9 @@ const deals = [
 */
 
 //CODE HERE
-console.log(deals[0].replace('15', '10'))
+deals[0].title = deals[0].title.replace("15", "10")
 
+console.log(deals[0].title)
 /*
     The restaurant is going to continue its
     family deal for another month. 
@@ -142,3 +142,6 @@ console.log(deals[0].replace('15', '10'))
 */
 
 //CODE HERE
+deals[1].desc = deals[1].desc.replace("March", "April").trim()
+
+console.log(deals[1].desc)

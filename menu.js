@@ -97,7 +97,7 @@ console.log(pizzaCat)
 */
 
 //CODE HERE
-let foodArr = [
+const foodArr = [
     {
         name: "Meat Lovers",
         price: 16,
@@ -154,11 +154,15 @@ let foodArr = [
 */
 
 //CODE HERE
+//element just stands for each item in the array, in this case the objects
 
-const filteredFood = foodArr.filter(element => {
-    return (element.tags === "meat")
+const filteredFood = foodArr.filter((element) => {
+    if(element.tags.includes("meat")) {
+        return element
+    }
 })
 
+console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -202,6 +206,33 @@ const filteredFood = foodArr.filter(element => {
 
 //CODE HERE
 
+// const filterByProperty = (property, number, type) => {
+//     let filteredArray = []
+//     if(type === "above") {
+//         foodArr.filter((element) => {
+//             if(element[property] > number) {
+//                 filteredArray.push(element)
+//             }
+//         })
+//     } else if(type === "below") {
+        // foodArr.filter((element) => {
+//         if(element[property] < number) {
+//             filteredArray.push(element)
+//         }
+//     }
+
+// }
+
+const filterByProperty = (property, number, type) => {
+    const filteredFood = foodArr.filter((element) => {
+        if(type === "above") {
+            return element[property] >= number
+        } else if(type === "below") {
+            return element[property] <= number
+        }
+    })
+    return filteredFood;
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -210,4 +241,6 @@ const filteredFood = foodArr.filter(element => {
     You'll have to console.log to see the filtered array
 */
 
+
 //CODE HERE
+console.log(filterByProperty("rating", 9, "above"))
